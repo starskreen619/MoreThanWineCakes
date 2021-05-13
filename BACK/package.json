@@ -9,7 +9,8 @@
     ]
   },
   "scripts": {
-    "start": "node server.js",
+    "front": "cd front && cd MoreThanWineCakes && npm start",
+    "start": "concurrently \"npm run dev\" \"npm run front\"",
     "server": "node server.js",
     "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "concurrently": "^6.1.0",
     "dotenv": "^9.0.0",
     "express": "^4.17.1",
     "express-es6-template-engine": "^2.2.3",
